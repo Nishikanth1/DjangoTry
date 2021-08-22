@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My first Django Project</title>
+</head>
+<body>
+<h1>THis is common across all pages</h1>
+{% include 'navbar.html' %}
+{% block content %}
+replace me
+{% endblock content%}
+
+{% block midcontent %}
+Here is the midcontent block in basepage
+{% endblock midcontent%}
+</body>
+</html>

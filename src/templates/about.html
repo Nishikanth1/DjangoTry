@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{ capfirst_var|capfirst|upper }}</h1>
+<h1>{{ center_var|center:"15" }}</h1>
+<p1> this is the about page</p1> <br>
+
+<p>
+{{ my_text }}, {{ my_list }}
+</p>
+
+{{ html_var|safe}}
+<br>
+{{ html_var|striptags}}
+<br>
+{{ html_var|striptags|slugify}}
+
+<ul>
+{% for each_item in my_list%}
+    {% if each_item == 4 %}
+    <li> {{ forloop.counter}} {{ each_item }} {{ my_number|add:25}}</li>
+    {% elif each_item == 3 %}
+    <li> {{ forloop.counter}} {{ each_item }} {{ my_number|add:100}}</li>
+    {% else %}
+    <li> {{ forloop.counter}} {{ each_item }}</li>
+    {% endif %}
+{% endfor %}
+</ul>
+
+{% endblock content %}
