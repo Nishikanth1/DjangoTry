@@ -91,7 +91,7 @@ def product_create_view(request):
     }
     return render(request, "products/product_create.html", context)
 
-def product_detail_view(request):
+def product_detail_view(request, id):
     # obj = Product.objects.get(id=1)
     obj = get_object_or_404(Product, id=id)
     # context = {
